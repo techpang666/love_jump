@@ -1,0 +1,149 @@
+
+/* 动画训练项目 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    // 主轴居中
+    justify-content: center;
+    // 侧轴居中 就不用行高了
+    align-items: center;
+    // vh视窗高度 1vh等于视窗高度的1%
+    height: 100vh;
+    background-color: #000;
+}
+
+ul {
+    position: relative;
+    display: flex;
+    height: 200px;
+}
+
+ul::after {
+    content: '爱心跳跳糖❤';
+    position: absolute;
+    top: 0;
+    // 走浏览器的一半
+    left: 50%;
+    color: pink;
+    font-size: 30px;
+    font-weight: 700;
+    // 2D平移 元素当前位置为参照 负数为左上 百分比相对于元素本身
+    transform: translate(-50%, -600%);
+}
+
+li {
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+// 定义动画
+@keyframes love_one {
+    30%, 50% {
+        height: 60px;
+        transform: translateY(-30px);
+    }
+    70%, 100% {
+        height: 20px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes love_two {
+    30%, 50% {
+        height: 125px;
+        transform: translateY(-60px);
+    }
+    70%, 100% {
+        height: 20px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes love_three {
+    30%, 50% {
+        height: 160px;
+        transform: translateY(-75px);
+    }
+    70%, 100% {
+        height: 20px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes love_four {
+    30%, 50% {
+        height: 180px;
+        transform: translateY(-60px);
+    }
+    70%, 100% {
+        height: 20px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes love_five {
+    30%, 50% {
+        height: 200px;
+        transform: translateY(-45px);
+    }
+    70%, 100% {
+        height: 20px;
+        transform: translateY(0);
+    }
+}
+
+// 给li加上动画
+li:nth-child(1) {
+    background-color: red;
+    // infinite 无限播放
+    animation: love_one 5s 0s infinite;
+}
+
+li:nth-child(2) {
+    background-color: darkturquoise;
+    animation: love_two 5s 0.2s infinite;
+}
+
+li:nth-child(3) {
+    background-color: darksalmon;
+    animation: love_three 5s 0.4s infinite;
+}
+
+li:nth-child(4) {
+    background-color: deeppink;
+    animation: love_four 5s 0.6s infinite;
+}
+
+li:nth-child(5) {
+    background-color: yellow;
+    animation: love_five 5s 0.8s infinite;
+}
+
+li:nth-child(6) {
+    background-color: deeppink;
+    animation: love_four 5s 1s infinite;
+}
+
+li:nth-child(7) {
+    background-color: darksalmon;
+    animation: love_three 5s 1.2s infinite;
+}
+
+li:nth-child(8) {
+    background-color: darkturquoise;
+    animation: love_two 5s 1.4s infinite;
+}
+
+li:nth-child(9) {
+    background-color: red;
+    animation: love_one 5s 1.6s infinite;
+}
+
